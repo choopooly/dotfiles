@@ -1,0 +1,15 @@
+[ui]
+# Name data to appear in commits
+username = Nicolas Plessis <choopooly@gmail.com>
+editor=vi
+merge=meld
+
+[extensions]
+color =
+hgext.convert=
+
+[color]
+# valid modes are win32, ansi, auto, off
+mode = auto
+
+
