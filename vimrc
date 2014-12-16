@@ -22,7 +22,7 @@ set bs=2		" allow backspacing over everything in insert mode
 set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set autoread		" auto read when file is changed from outside
-
+set paste               " paste with proper indent
 
 filetype off          " necessary to make ftdetect work on Linux
 syntax on
@@ -33,17 +33,6 @@ filetype plugin on    " Enable filetype-specific plugins
 
 " auto reload vimrc when editing it
 autocmd! bufwritepost .vimrc source ~/.vimrc
-
-
-" For some reason home and end keys are not mapping properly.
-" Home key
-imap <esc>OH <esc>0i
-cmap <esc>OH <home>
-nmap <esc>OH 0
-" End key
-nmap <esc>OF $
-imap <esc>OF <esc>$a
-cmap <esc>OF <end>
 
 
 syntax on		" syntax highlight
@@ -300,7 +289,7 @@ let g:tex_flavor='latex'
 " --- AutoClose - Inserts matching bracket, paren, brace or quote 
 " fixed the arrow key problems caused by AutoClose
 if !has("gui_running")	
-   set term=linux
+   set term=xterm
    imap OA <ESC>ki
    imap OB <ESC>ji
    imap OC <ESC>li
@@ -344,3 +333,6 @@ let g:snipMateAllowMatchingDot = 0
 
 " --- coffee-script
 au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw! " recompile coffee scripts on write
+
+" --- vim-gitgutter
+let g:gitgutter_enabled = 1
