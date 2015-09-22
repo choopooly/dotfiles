@@ -17,6 +17,7 @@ alias webshare='python -c "import SimpleHTTPServer;SimpleHTTPServer.test()"'
 
 # docker
 alias docker='sudo docker'
+alias docker-rm='docker rm `docker ps --no-trunc -aq`'
 
 
 # Extract archives the easy way...
